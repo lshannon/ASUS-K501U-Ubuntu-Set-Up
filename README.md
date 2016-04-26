@@ -1,6 +1,6 @@
 # ASUS K501U Ubuntu Post Install Set Up
 
-This is the steps I followed to get Ubuntu 16.04 set up to start Java programming after I install Ubuntu.
+This is the steps I followed to get Ubuntu 16.04 configured to start Java programming after it was installed.
 
 ## Getting Wifi to work
 
