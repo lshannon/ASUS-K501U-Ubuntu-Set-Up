@@ -61,6 +61,9 @@ luke@luke-K501UX:~$
 
 ```
 
+Now we can make use of some of these programs following this:
+https://asreimer.wordpress.com/2015/07/09/asus-z97-eusb-3-1-motherboard-sensors-and-thermal-control-on-opensuse-13-2/
+
 ## Flashing the BIOS
 
 Here is where to get the latest BIOS:
