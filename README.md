@@ -66,13 +66,16 @@ luke@luke-K501UX:~$
 Here is where to get the latest BIOS:
 https://www.asus.com/support/Download/3/416/0/2/dFPFCR1MvzCTTcgs/8/
 
-1. Download the BIOS upgrade from the link you provided.
-2. Put the extracted file on a USB partition, using "FAT" file system not fat32 as stated here.
-3. Plug in the USB, then turn on the computer, press the key to get into BIOS on boot.
+1. Download the BIOS upgrade from the link
+2. Put the extracted file on a USB partition, using "FAT" file system not fat32 as stated here. Also create a partition on it to put the BIOS file in
+3. Plug in the USB, then turn on the computer, press the F2 key to get into BIOS on boot.
 4. From the Manual follow these directions:
-  a. Use the Start Easy Flash function on the Advanced page of the BIOS Setup Utility. Follow the instructions shown.
-  b. Locate the latest BIOS file and start updating (flashing) the BIOS.
-  c. You must Restore Defaults on the Exit page after updating (flashing) the BIOS.
+- Use the Start Easy Flash function on the Advanced page of the BIOS Setup Utility. Follow the instructions shown.
+- Locate the latest BIOS file and start updating (flashing) the BIOS.
+- You must Restore Defaults on the Exit page after updating (flashing) the BIOS.
+
+Here is document from ASUS outlining the steps:
+https://www.asus.com/support/faq/1008859
 
 
 ## Fixing Vi
