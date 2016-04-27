@@ -24,6 +24,43 @@ After installing it run:
 tlp start
 sudo reboot
 ```
+
+Some useful tools for diagnosis of fan noise and system state.
+
+```shell
+sudo apt install lm-sensors
+
+luke@luke-K501UX:~$ sensors
+acpitz-virtual-0
+Adapter: Virtual device
+temp1:        +40.0°C  (crit = +103.0°C)
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Physical id 0:  +43.0°C  (high = +100.0°C, crit = +100.0°C)
+Core 0:         +43.0°C  (high = +100.0°C, crit = +100.0°C)
+Core 1:         +41.0°C  (high = +100.0°C, crit = +100.0°C)
+
+asus-isa-0000
+Adapter: ISA adapter
+cpu_fan:     4100 RPM
+temp1:        +40.0°C  
+
+```
+
+Also 
+```shell
+sudo apt install fwts
+
+luke@luke-K501UX:~$ fwts fan
+Running 1 tests, results appended to results.log
+Test: Simple fan tests.                                                     
+  Test fan status.                                        4 passed, 1 failed   
+  Load system, check CPU fan status.                                           
+luke@luke-K501UX:~$ 
+
+```
+
 ## Fixing Vi
 
 Ubuntu comes with a really stripped down version of Vi. Run the following to install something better.
