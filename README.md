@@ -64,6 +64,9 @@ luke@luke-K501UX:~$
 Now we can make use of some of these programs following this:
 https://asreimer.wordpress.com/2015/07/09/asus-z97-eusb-3-1-motherboard-sensors-and-thermal-control-on-opensuse-13-2/
 
+This one also holds some promise:
+http://askubuntu.com/questions/28848/what-does-the-kernel-boot-parameter-set-acpi-osi-linux-do/50776#50776
+
 ## Flashing the BIOS
 
 Here is where to get the latest BIOS:
