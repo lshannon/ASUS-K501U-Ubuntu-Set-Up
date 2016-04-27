@@ -67,6 +67,9 @@ https://asreimer.wordpress.com/2015/07/09/asus-z97-eusb-3-1-motherboard-sensors-
 This one also holds some promise:
 http://askubuntu.com/questions/28848/what-does-the-kernel-boot-parameter-set-acpi-osi-linux-do/50776#50776
 
+This might be the one:
+http://askubuntu.com/questions/22108/how-to-control-fan-speed
+
 ## Nvidia Card Configuration
 
 Install the following:
