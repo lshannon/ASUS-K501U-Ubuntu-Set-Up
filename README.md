@@ -8,8 +8,22 @@ After the install, the Wifi did not work. This was fixed by running this command
 
 ```shell
 options asus_nb_wmi wapf=1" | sudo tee /etc/modprobe.d/asus_nb_wmi.conf
+
 ```
 
+## Dealing with Loud Fan
+
+Seems like the fan is always running on this laptop. Currently on a quest to fix it.
+
+At presenting I am trying using tlp:
+http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
+
+After installing it run:
+
+```shell
+tlp start
+sudo reboot
+```
 ## Fixing Vi
 
 Ubuntu comes with a really stripped down version of Vi. Run the following to install something better.
