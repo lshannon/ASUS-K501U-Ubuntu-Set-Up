@@ -67,6 +67,21 @@ https://asreimer.wordpress.com/2015/07/09/asus-z97-eusb-3-1-motherboard-sensors-
 This one also holds some promise:
 http://askubuntu.com/questions/28848/what-does-the-kernel-boot-parameter-set-acpi-osi-linux-do/50776#50776
 
+## Nvidia Card Configuration
+
+Install the following:
+
+```shell
+sudo apt-get install gksu
+```
+
+Then:
+```shell
+gksudo nvidia-settings
+```
+
+This will pull up a UI to fine tune the Graphic Card setting. Note: To run this you will need to use the NVidia drivers (3rd party on Linux).
+
 ## Flashing the BIOS
 
 Here is where to get the latest BIOS:
