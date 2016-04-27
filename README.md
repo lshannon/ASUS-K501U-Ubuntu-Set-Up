@@ -82,6 +82,9 @@ gksudo nvidia-settings
 
 This will pull up a UI to fine tune the Graphic Card setting. Note: To run this you will need to use the NVidia drivers (3rd party on Linux).
 
+Here is a tutorial with more information on that:
+https://sites.google.com/site/easylinuxtipsproject/display
+
 ## Flashing the BIOS
 
 Here is where to get the latest BIOS:
