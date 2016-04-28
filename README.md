@@ -1,31 +1,73 @@
 # ASUS K501U Ubuntu Post Install Set Up
 
-This is the steps I followed to get Ubuntu 16.04 configured to start Java programming after it was installed.
+This is the steps I followed to get Ubuntu 16.04 configured to start Java programming after it was installed. I am happy to say, that after taking the actions below I seem to have a pretty decent little machine.
+
+_NOTE_
+
+At several points in this process I ended up in a place where, after a reboot, when I tried to log in it would accept my password but then not take me to the Desktop. Instead it would make a 'beep' like an error would happen and prompt for the password again.
+
+For me to fix this I pressed Ctrl + F1 to get to the terminal. I then logged into the terminal and ran the following:
+
+```shell
+sudo apt-get purge nvidia*
+sudo reboot
+```
+
+This got me back logging back in at least once. In another case I was not using Nvidia, so this did not work. I ended up redoing the install. This journey was not without its frustrations.
+
+## Flashing the BIOS
+
+I had to deal with a loud CPU fan that seemed to never shut off (see below). One way to attempt to fix this is I flashed the Bios.
+
+Here is where to get the latest BIOS:
+https://www.asus.com/support/Download/3/416/0/2/dFPFCR1MvzCTTcgs/8/
+
+To figure out what version Bios you have, press F12 in the Bios. The version will appear in the lower right
+
+Here are the steps I did to successfully Flash the Bios.
+
+1. Download the BIOS upgrade from the link
+2. Take a USB and format it with FAT (not FAT32) and give it only 1 partition
+2. I read larger USB will not work, I personally used an old 512 MB for this
+4. Put the extracted file on a USB
+5. Plug in the USB, then turn on the computer, press the F2 key to get into BIOS on start up
+6. Set primary Boot device to be this drive
+7. Press F10 to Save and Exit
+8. The system will just got straight into the Bios again
+9. Use the Start Easy Flash function on the Advanced page of the BIOS Setup Utility. Follow the instructions shown
+10. Locate the latest BIOS file from the USB and start updating (flashing) the BIOS.
+11. You must Restore Defaults on the Exit page after updating (flashing) the BIOS.
+
+Here is document from ASUS outlining the steps:
+https://www.asus.com/support/faq/1008859
 
 ## Getting Wifi to work
 
-After the install, the Wifi did not work. This was fixed by running this command:
+After the install, I was not able to Enable the Wifi card. This was fixed by running this command:
 
 ```shell
 options asus_nb_wmi wapf=1" | sudo tee /etc/modprobe.d/asus_nb_wmi.conf
-
 ```
 
 ## Dealing with Loud Fan
 
-Seems like the fan is always running on this laptop. Currently on a quest to fix it.
+Seems like the fan is always running on this laptop. Flashing the Bios really helped. Here are some other things I did.
 
-At presenting I am trying using tlp:
+I installed tlp:
+
 http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
 
-After installing it run:
+After installing it ran:
 
 ```shell
 tlp start
 sudo reboot
 ```
+I did have to enable insecure boot for this to work.
 
-Some useful tools for diagnosis of fan noise and system state.
+I did find some useful tools for diagnosis of fan noise and system state.
+
+Here is a good way to see fan speeds and temperatures.
 
 ```shell
 sudo apt install lm-sensors
@@ -48,37 +90,21 @@ temp1:        +40.0°C
 
 ```
 
-Also 
-```shell
-sudo apt install fwts
-
-luke@luke-K501UX:~$ fwts fan
-Running 1 tests, results appended to results.log
-Test: Simple fan tests.                                                     
-  Test fan status.                                        4 passed, 1 failed   
-  Load system, check CPU fan status.                                           
-luke@luke-K501UX:~$ 
-
-```
-
-Also 
+To control fans, the following can be installed
 
 ```shell
 sudo apt-get install fancontrol
 ```
 
-Now we can make use of some of these programs following this:
-https://asreimer.wordpress.com/2015/07/09/asus-z97-eusb-3-1-motherboard-sensors-and-thermal-control-on-opensuse-13-2/
+The following Post explains how fancontrol can be used to put the fan on a more manual control and specify the ranges it operates. I have not gone this far at present, the Bios flash seemed to have helped as it now runs intermitently. However, should it start to run more frequently, I will be implementing this approach
 
-This one also holds some promise:
-http://askubuntu.com/questions/28848/what-does-the-kernel-boot-parameter-set-acpi-osi-linux-do/50776#50776
-
-This might be the one:
 http://askubuntu.com/questions/22108/how-to-control-fan-speed
 
 ## Nvidia Card Configuration
 
-Install the following:
+At first I found the text fuzzy, so I installed Nvidia drivers and then tweaked the settings. But this resulted in getting looked out the desk top (see first note). For now I going to see if I can make do with it.
+
+However, should someone wish to try the drivers:
 
 ```shell
 sudo apt-get install gksu
@@ -94,23 +120,6 @@ This will pull up a UI to fine tune the Graphic Card setting. Note: To run this 
 Here is a tutorial with more information on that:
 https://sites.google.com/site/easylinuxtipsproject/display
 
-## Flashing the BIOS
-
-Here is where to get the latest BIOS:
-https://www.asus.com/support/Download/3/416/0/2/dFPFCR1MvzCTTcgs/8/
-
-1. Download the BIOS upgrade from the link
-2. Put the extracted file on a USB partition, using "FAT" file system not fat32 as stated here. Also create a partition on it to put the BIOS file in
-3. Plug in the USB, then turn on the computer, press the F2 key to get into BIOS on boot.
-4. From the Manual follow these directions:
-- Use the Start Easy Flash function on the Advanced page of the BIOS Setup Utility. Follow the instructions shown.
-- Locate the latest BIOS file and start updating (flashing) the BIOS.
-- You must Restore Defaults on the Exit page after updating (flashing) the BIOS.
-
-Here is document from ASUS outlining the steps:
-https://www.asus.com/support/faq/1008859
-
-
 ## Fixing Vi
 
 Ubuntu comes with a really stripped down version of Vi. Run the following to install something better.
@@ -118,6 +127,8 @@ Ubuntu comes with a really stripped down version of Vi. Run the following to ins
 ```shell
 sudo apt-get install vim-gnome
 ```
+
+Whats cool is, if vi is typed in after running this command, its the full version. Not to mention the system now has Vim.
 
 ## Installing Java
 
@@ -146,6 +157,14 @@ wget dist.springsource.com/release/STS/3.7.3.RELEASE/dist/e4.6/spring-tool-suite
 sudo apt-get update
 sudo apt-get install git
 sudo apt-get install maven
+```
+
+### Download Atom
+
+Atom (the editor not the DC hero) is great for editing text with some awesome packages.
+
+```shell
+wget https://atom.io/download/deb
 ```
 
 Thats it for now. More details to come as I fine tune the system.
