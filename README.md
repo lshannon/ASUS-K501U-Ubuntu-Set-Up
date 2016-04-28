@@ -174,6 +174,10 @@ On my Mac I love using Shiftit to position windows. It seems Compiz has a simila
 ```shell
 sudo apt-get install compizconfig-settings-manager compiz-plugins-extra
 ```
+Here is a little tutorial on how to use some of the features:
+http://www.howtogeek.com/167674/how-to-enable-and-tweak-ubuntus-flashy-graphical-effects/
+
+I hope this does not blow up my Desktop (ie: unable to log in). Lets see...
 
 Thats it for now. More details to come as I fine tune the system.
 
