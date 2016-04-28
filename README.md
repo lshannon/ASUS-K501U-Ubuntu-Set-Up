@@ -61,6 +61,12 @@ luke@luke-K501UX:~$
 
 ```
 
+Also 
+
+```shell
+sudo apt-get install fancontrol
+```
+
 Now we can make use of some of these programs following this:
 https://asreimer.wordpress.com/2015/07/09/asus-z97-eusb-3-1-motherboard-sensors-and-thermal-control-on-opensuse-13-2/
 
