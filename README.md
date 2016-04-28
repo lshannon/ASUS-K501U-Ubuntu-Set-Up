@@ -167,5 +167,13 @@ Atom (the editor not the DC hero) is great for editing text with some awesome pa
 wget https://atom.io/download/deb
 ```
 
+### Adding Compiz
+
+On my Mac I love using Shiftit to position windows. It seems Compiz has a similar concept.
+
+```shell
+sudo apt-get install compizconfig-settings-manager compiz-plugins-extra
+```
+
 Thats it for now. More details to come as I fine tune the system.
 
