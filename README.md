@@ -159,6 +159,9 @@ sudo apt-get install git
 sudo apt-get install maven
 ```
 
+To get going with Github, this is a good tutorial:
+http://lifehacker.com/5983680/how-the-heck-do-i-use-github
+
 ### Download Atom
 
 Atom (the editor not the DC hero) is great for editing text with some awesome packages.
