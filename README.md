@@ -159,8 +159,19 @@ sudo apt-get install git
 sudo apt-get install maven
 ```
 
+To get git working properly I needed to execute:
+
+```shell
+git config --global --edit
+```
+Then remove the helper section, which included a reference to the osxkeychain. I think this happened when I followed Mac instructions accidentally. This is the correct was to cache the password in Linux:
+
+https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux
+
 To get going with Github, this is a good tutorial:
 http://lifehacker.com/5983680/how-the-heck-do-i-use-github
+
+
 
 ### Download Atom
 
