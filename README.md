@@ -151,6 +151,12 @@ So STS is my fav IDE. And here is where to get it:
 
 wget dist.springsource.com/release/STS/3.7.3.RELEASE/dist/e4.6/spring-tool-suite-3.7.3.RELEASE-e4.6-linux-gtk-x86_64.tar.gz
 
+### Setting Up Postgres
+
+This is a helpful link:
+
+https://help.ubuntu.com/lts/serverguide/postgresql.html
+
 ### Set Up Git and Maven
 
 ```shell
