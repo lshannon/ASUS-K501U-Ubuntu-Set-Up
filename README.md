@@ -100,6 +100,39 @@ The following Post explains how fancontrol can be used to put the fan on a more 
 
 http://askubuntu.com/questions/22108/how-to-control-fan-speed
 
+## Fixing cpu low freqeuncy
+
+I had a problem when my cpu freqeuncy was ~200 Mhz (200 MHz !!!). I fix it this way.
+(My configuration was Linux mylogin-K501UB 4.4.0-34-generic #53-Ubuntu x86_64 x86_64 x86_64 GNU/Linux)
+
+1. Disable intel_pstate driver on boot
+
+Edit ""/etc/default/grub" file.
+
+```shell
+sudo vim /etc/default/grub
+```
+Change GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" to GRUB_CMDLINE_LINUX_DEFAULT="intel_pstate=disable quiet splash" 
+
+Then:
+
+```shell
+sudo update-grub
+```
+After reboot change governor to performance
+
+```shell
+sudo sudo cpupower frequency-set -g performance
+```
+Specific frequency may be set by:
+
+```shell
+cpupower frequency-set -d 2300000 -u 2300000
+```
+
+Related link https://wiki.archlinux.org/index.php/CPU_frequency_scaling
+
+
 ## Nvidia Card Configuration
 
 At first I found the text fuzzy, so I installed Nvidia drivers and then tweaked the settings. But this resulted in getting looked out the desk top (see first note). For now I going to see if I can make do with it.
