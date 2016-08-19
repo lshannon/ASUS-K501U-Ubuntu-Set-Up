@@ -131,6 +131,8 @@ cpupower frequency-set -d 2300000 -u 2300000
 
 Related link https://wiki.archlinux.org/index.php/CPU_frequency_scaling
 
+Thanks to cheshaneko for contributing this!
+
 
 ## Nvidia Card Configuration
 
