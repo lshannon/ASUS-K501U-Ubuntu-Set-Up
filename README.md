@@ -100,10 +100,9 @@ The following Post explains how fancontrol can be used to put the fan on a more 
 
 http://askubuntu.com/questions/22108/how-to-control-fan-speed
 
-## Fixing cpu low freqeuncy
+## Fixing CPU Low Frequency
 
-I had a problem when my cpu freqeuncy was ~200 Mhz (200 MHz !!!). I fix it this way.
-(My configuration was Linux mylogin-K501UB 4.4.0-34-generic #53-Ubuntu x86_64 x86_64 x86_64 GNU/Linux)
+If dealing with low freqeuncy (ie: 200 MHz !!!). A potential fix is, based Linux mylogin-K501UB 4.4.0-34-generic #53-Ubuntu x86_64 x86_64 x86_64 GNU/Linux:
 
 1. Disable intel_pstate driver on boot
 
