@@ -46,7 +46,7 @@ https://www.asus.com/support/faq/1008859
 After the install, I was not able to Enable the Wifi card. This was fixed by running this command:
 
 ```shell
-options asus_nb_wmi wapf=1" | sudo tee /etc/modprobe.d/asus_nb_wmi.conf
+echo "options asus_nb_wmi wapf=1" | sudo tee /etc/modprobe.d/asus_nb_wmi.conf
 ```
 
 ## Dealing with Loud Fan
