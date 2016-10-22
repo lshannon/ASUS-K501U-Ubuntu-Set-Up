@@ -48,6 +48,15 @@ After the install, I was not able to Enable the Wifi card. This was fixed by run
 ```shell
 echo "options asus_nb_wmi wapf=1" | sudo tee /etc/modprobe.d/asus_nb_wmi.conf
 ```
+### Wifi Times Out After Laptop is Suspended
+
+Sometimes after the laptop has been suspended, the wifi will not be able to connect to any networks.
+
+The following command should fix the issue:
+
+```shell
+sudo systemctl restart network-manager.service
+```
 
 ## Dealing with Loud Fan
 
