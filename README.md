@@ -4,6 +4,10 @@ This is the steps I followed to get Ubuntu 16.04 configured to start Java progra
 
 _NOTE_
 
+I recently tried to use Ubuntu 18.04. After a lot of frustration I have moved back to 16.04. So much weird behavior. For example, none of my screen recorders work anymore (they just record black screens), it came with an installed version of Java that had some weirdness around the certicates, my file system become read only suddenly while I was working on some code, as I could not save, lost some work and finally it just shut down once and I was not able to boot back in (had to re-install). In summary, based on my experience, 18.04 has some issues. Stick with 16.04
+
+_NOTE_
+
 At several points in this process I ended up in a place where, after a reboot, when I tried to log in it would accept my password but then not take me to the Desktop. Instead it would make a 'beep' like an error would happen and prompt for the password again.
 
 For me to fix this I pressed Ctrl + F1 to get to the terminal. I then logged into the terminal and ran the following:
